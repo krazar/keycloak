@@ -5,7 +5,7 @@
 html.login-pf, .login-pf body {
   height: 100%;
   background-image: none;
-  background-color: #001F31;
+  background-color: #12384A;
   color: #ffffff;
   font: 14px "Open Sans", sans-serif;
   font-weight: 400;
@@ -13,7 +13,11 @@ html.login-pf, .login-pf body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kc-header .kc-logo-text {
+.login-pf-page .login-pf-page-header {
+  margin-bottom: 20px;
+}
+
+.login-pf-page .login-pf-page-header .kc-logo-text {
   background-image: url(../img/logo-qualifio-white.svg);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -26,12 +30,23 @@ html.login-pf, .login-pf body {
   font-size: 0px;
 }
 
+.card-pf {
+  margin: 0 auto;
+  box-shadow: none;
+  padding: 40px;
+  max-width: 500px;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
 h1 {
-  text-align: left;
   font-family: "Raleway", sans-serif;
   font-size: 30px;
   font-weight: 600;
-  color: #12384a;
+  color: #ffffff;
 }
 
 h1:after {
@@ -40,38 +55,50 @@ h1:after {
   width: 40px;
   height: 2px;
   background: #fba026;
-  margin: 15px 0;
+  margin: 15px auto;
 }
 
-.login-pf-page .login-pf-header h1 {
+input, input:focus {
+  outline: none;
+}
+
+.login-pf-page .card-pf p {
+  color: #ffffff;
+}
+
+a, a:focus, a:hover  {
+  color: #61C1DB;
+}
+
+.form-group {
   text-align: left;
 }
 
-#kc-form-login .pf-c-form-control {
+.pf-c-form-control, .login-pf-page .form-control {
   -webkit-appearance: none;
   background-color: transparent;
   border: none;
-  padding: 16px;
+  padding: 15px;
   font-size: 15px;
-  border-radius: 0 5px 5px 0;
-  font-family: "Raleway", sans-serif;
   width: 100%;
   color: #666666;
   border-radius: 5px;
   border: 1px solid #f2f2f2;
+  background-color: #ffffff;
+  height: auto;
+  box-shadow: none;
+  line-height: inherit;
 }
 
-#kc-form-login .pf-c-form-control:focus {
+.pf-c-form-control:focus, .login-pf-page .form-control:focus {
   outline: none;
-  border: 1px solid #61c1db;
+  border-color: #E8E8E8;
 }
 
-.pf-m-primary.pf-c-button {
+.pf-c-button {
   width: 100%;
   border: none;
   border-radius: 5px;
-  background-color: #fba026;
-  color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -82,14 +109,84 @@ h1:after {
   cursor: pointer;
 }
 
-.card-pf {
-  margin: 0 auto;
-  box-shadow: var(--pf-global--BoxShadow--lg);
-  padding: 40px;
-  max-width: 500px;
-  margin: 40px auto;
+.pf-m-primary {
+  background-color: #fba026;
+  color: #ffffff;
+}
+
+.pf-m-primary:hover {
+  background-color: #EE9319;
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+  width: 100%;
+  float: inherit;
+}
+
+ol, ul {
+  text-align: left;
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 15px;
+  left: 19%;
+}
+
+.form-horizontal .control-label {
+  margin-bottom: 5px;
+}
+
+#saveTOTPBtn {
+  margin-top: 20px;
+}
+
+.alert {
+  border-width: 2px;
   border-radius: 5px;
-  border: 1px solid #e8e8e8;
-  background-color: #ffffff;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  text-align: left;
+  background: #ffffff;
   color: #666666;
+}
+
+.alert > span {
+  padding: 10px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.alert .fa:before {
+  font-size: 16px;
+}
+
+.alert.alert-error {
+  background: #FFF6E6;
+  border-color: #fba026;
+}
+
+.alert.alert-error .fa {
+  background: #fba026;
+  color: #FFF6E6;
+}
+
+.fa-exclamation-circle:before {
+  content: "\f071";
+}
+
+.alert.alert-warning {
+  background: #f8feff;
+  border-color: #61C1DB;
+}
+
+.alert.alert-warning .fa {
+  background: #61C1DB;
+  color: #dff5fb;
+}
+
+.fa-exclamation-triangle:before {
+  content: "\f05a";
 }
