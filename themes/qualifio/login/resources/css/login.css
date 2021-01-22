@@ -38,10 +38,11 @@ html.login-pf, .login-pf body {
   border: none;
   background-color: transparent;
   color: #ffffff;
+  text-align: center;
+  position: relative;
 }
 
 h1 {
-  text-align: left;
   font-family: "Raleway", sans-serif;
   font-size: 30px;
   font-weight: 600;
@@ -54,32 +55,42 @@ h1:after {
   width: 40px;
   height: 2px;
   background: #fba026;
-  margin: 15px 0;
+  margin: 15px auto;
 }
 
 input, input:focus {
   outline: none;
 }
 
-.login-pf-page .login-pf-header h1 {
+.login-pf-page .card-pf p {
+  color: #ffffff;
+}
+
+a, a:focus, a:hover  {
+  color: #61C1DB;
+}
+
+.form-group {
   text-align: left;
 }
 
-.pf-c-form-control {
+.pf-c-form-control, .login-pf-page .form-control {
   -webkit-appearance: none;
   background-color: transparent;
   border: none;
-  padding: 16px;
+  padding: 15px;
   font-size: 15px;
-  border-radius: 0 5px 5px 0;
   width: 100%;
   color: #666666;
   border-radius: 5px;
   border: 1px solid #f2f2f2;
   background-color: #ffffff;
+  height: auto;
+  box-shadow: none;
+  line-height: inherit;
 }
 
-.pf-c-form-control:focus {
+.pf-c-form-control:focus, .login-pf-page .form-control:focus {
   outline: none;
   border-color: #E8E8E8;
 }
@@ -107,12 +118,38 @@ input, input:focus {
   background-color: #EE9319;
 }
 
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+  width: 100%;
+  float: inherit;
+}
+
+ol, ul {
+  text-align: left;
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 15px;
+  left: 19%;
+}
+
+.form-horizontal .control-label {
+  margin-bottom: 5px;
+}
+
+#saveTOTPBtn {
+  margin-top: 20px;
+}
+
 .alert {
   border-width: 2px;
   border-radius: 5px;
   padding: 0;
   display: flex;
   align-items: stretch;
+  text-align: left;
+  background: #ffffff;
+  color: #666666;
 }
 
 .alert > span {
@@ -127,10 +164,29 @@ input, input:focus {
 }
 
 .alert.alert-error {
+  background: #FFF6E6;
   border-color: #fba026;
 }
 
 .alert.alert-error .fa {
   background: #fba026;
   color: #FFF6E6;
+}
+
+.fa-exclamation-circle:before {
+  content: "\f071";
+}
+
+.alert.alert-warning {
+  background: #f8feff;
+  border-color: #61C1DB;
+}
+
+.alert.alert-warning .fa {
+  background: #61C1DB;
+  color: #dff5fb;
+}
+
+.fa-exclamation-triangle:before {
+  content: "\f05a";
 }
