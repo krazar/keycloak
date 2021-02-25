@@ -1,17 +1,12 @@
 ---
 
-services:
-  - name: docker:dind
-    command: [ "dockerd", "--host=tcp://localhost:2375", "--mtu=1450" ]
-variables:
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://localhost:2375/
+include:
+  - project: infrastructure/ci
+    ref: master
+    file: main.yaml
 
-build:
-  stage: build
-  image: docker:stable
-  before_script:
-    - docker login --username "${REGISTRY_USER}" --password "${REGISTRY_PASSWORD}" "${REGISTRY_URL}"
-  script:
-    - docker build --pull --tag "${REGISTRY_URL}/${CI_PROJECT_PATH}:${CI_COMMIT_REF_NAME}" .
-    - docker push "${REGISTRY_URL}/${CI_PROJECT_PATH}:${CI_COMMIT_REF_NAME}"
+variables:
+  DISABLE_DEPLOY: "true"
+  DISABLE_E2E: "true"
+  DISABLE_REVIEW: "true"
+  DISABLE_TEST: "true"
