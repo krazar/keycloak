@@ -74,7 +74,9 @@ a, a:focus, a:hover  {
   text-align: left;
 }
 
-.pf-c-form-control, .login-pf-page .form-control {
+.pf-c-form-control, 
+.login-pf-page .form-control,
+.pf-c-form-control:not(textarea) {
   -webkit-appearance: none;
   background-color: transparent;
   border: none;
@@ -90,9 +92,12 @@ a, a:focus, a:hover  {
   line-height: inherit;
 }
 
-.pf-c-form-control:focus, .login-pf-page .form-control:focus {
+.pf-c-form-control:focus, 
+.login-pf-page .form-control:focus,
+.pf-c-form-control.pf-m-focus {
   outline: none;
   border-color: #E8E8E8;
+  padding: 15px;
 }
 
 .pf-c-button {
@@ -109,12 +114,14 @@ a, a:focus, a:hover  {
   cursor: pointer;
 }
 
-.pf-m-primary {
+.pf-m-primary,
+.pf-c-button.pf-m-primary {
   background-color: #fba026;
   color: #ffffff;
 }
 
-.pf-m-primary:hover {
+.pf-m-primary:hover,
+.pf-c-button.pf-m-primary:hover {
   background-color: #EE9319;
 }
 
