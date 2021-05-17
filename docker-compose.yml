@@ -20,7 +20,6 @@ services:
       - KEYCLOAK_CREATE_ADMIN_USER=true
       - KEYCLOAK_ADMIN_USER=ku
       - KEYCLOAK_ADMIN_PASSWORD=ku
-      - KEYCLOAK_EXTRA_ARGS="-Dkeycloak.theme.staticMaxAge=-1 -Dkeycloak.theme.cacheThemes=false -Dkeycloak.theme.cacheTemplates=false"
     depends_on:
       - postgresql
 volumes:
