@@ -1,7 +1,7 @@
 ---
 
 include:
-  - project: infrastructure/ci
+  - project: infrastructure/ci-base
     ref: master
     file: main.yaml
 
