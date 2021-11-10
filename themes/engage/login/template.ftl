@@ -41,7 +41,7 @@
 </head>
 
 <body class="${properties.kcBodyClass!}">
-<div class="${properties.kcLoginClass!}">
+<div class="${properties.kcLoginClass!}" style="padding-top: 250px">
     <div style="text-align: right">
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale" style="padding-right: 25px">
@@ -99,12 +99,12 @@
 
     </div>
 
-    <div class="login__footer" style="text-align: center; padding-top: 50px">
+   
+</div>
+ <div class="login__footer" style="text-align: center; padding-top: 50px">
         <a href="https://qualifio.zendesk.com/hc/fr" target="_blank">Besoin d'aide ?</a> •
         <a href="https://qualifio.com/fr/politique-vie-privee/" target="_blank">Politique vie privée</a> •
         <a href="https://qualifio.com/blog/fr/" target="_blank">Blog</a>
-    </div>
-</div>
-</body>
+    </div></body>
 </html>
 </#macro>

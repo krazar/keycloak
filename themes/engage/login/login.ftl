@@ -1,14 +1,19 @@
 <#import "template.ftl" as layout>
-<style>
-#username {width: 300px}
-</style>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
+    <#if messagesPerField.existsError('username','password')>
+        <div class="qlf-alert-text qlf-alert-text--orange">
+            <i class="qlf-alert-text__icon fas fa-exclamation-triangle"></i>
+            <div class="qlf-alert-text__label">
+                ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
+            </div>
+        </div>
+    </#if>
     <div id="kc-form" style="display: flex;">
         <#--  ${msg("loginAccountTitle")}  -->
-      <div id="kc-form-wrapper">
+      <div id="kc-form-wrapper" style="wrapper__login__form">
         <#if realm.password>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
@@ -24,11 +29,6 @@
                             placeholder="${msg('email')}"
                         />
 
-                        <#if messagesPerField.existsError('username','password')>
-                            <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
-                            </span>
-                        </#if>
                     </#if>
                 </div>
 
@@ -83,6 +83,7 @@
                 <#--  todo make this dynamic  -->
                 <div class="wrapper__login__sso__button">
                     <#list social.providers as p>
+                        <!-- idp ${p.displayName} -->
                         <#if p.displayName == "google">
                             <a id="google__button" href="${p.loginUrl}">
                                 <img src="${url.resourcesPath}/img/google-g-logo.svg">
@@ -119,8 +120,8 @@
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div id="kc-registration-container">
                 <div id="kc-registration">
-                    <span>${msg("noAccount")} <a tabindex="6"
-                                                 href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+                    <span>${msg("noAccount")}
+                     <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
                 </div>
             </div>
         </#if>
