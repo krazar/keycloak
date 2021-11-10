@@ -12,12 +12,10 @@
         </div>
     </#if>
     <div id="kc-form" style="display: flex;">
-        <#--  ${msg("loginAccountTitle")}  -->
       <div id="kc-form-wrapper" style="wrapper__login__form">
         <#if realm.password>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
-                    <#--  <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>  -->
 
                     <#if usernameEditDisabled??>
                         <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled
@@ -25,16 +23,15 @@
                     <#else>
                         <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text" autofocus autocomplete="off"
                             aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
-                            style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=');"
+                            style="width:250px; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=');"
                             placeholder="${msg('email')}"
+                            
                         />
 
                     </#if>
                 </div>
 
                 <div class="${properties.kcFormGroupClass!}">
-                    <#--  <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>  -->
-
                     <input tabindex="2" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off"
                            aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                            style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=');"
@@ -108,10 +105,6 @@
                         </a>  -->
                     </#list>
                 </div>
-
-                <#--  <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
-                
-                </ul>  -->
             </div>
         </#if>
 

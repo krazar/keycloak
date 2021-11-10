@@ -35,9 +35,6 @@
         </#list>
     </#if>
     <link href="${url.resourcesPath}/css/manager.css" rel="stylesheet" />
-
-    <#--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  -->
-
 </head>
 
 <body class="${properties.kcBodyClass!}">
@@ -76,7 +73,7 @@
     <div class="${properties.kcFormCardClass!}">
        
       <div id="kc-content"  style="width: 900px">
-        <div id="kc-content-wrapper" style="width: 900px">
+        <div id="kc-content-wrapper" style="width: 500px">
 
           <#-- App-initiated actions should not see warning messages about the need to complete the action -->
           <#-- during login.                                                                               -->
