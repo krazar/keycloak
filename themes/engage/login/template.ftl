@@ -38,10 +38,10 @@
 </head>
 
 <body class="${properties.kcBodyClass!}">
-<div class="${properties.kcLoginClass!}" style="padding-top: 250px">
-    <div style="text-align: right">
+<div class="${properties.kcLoginClass!}">
+    <div class="login__header">
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
-            <div id="kc-locale" style="padding-right: 25px">
+            <div id="kc-locale">
                 <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
                     <div class="kc-dropdown wrapper__login__form__lang" id="kc-locale-dropdown" >
                         <select id="localeSwitch">
@@ -63,45 +63,47 @@
             </div>
         </#if>
     </div>
+    <div class="login__content">
+        <div id="kc-header" class="${properties.kcHeaderClass!}">
+            <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
+                ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
+            </div>
+        </div>
 
-    <div id="kc-header" class="${properties.kcHeaderClass!}">
-        <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
-            ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
+        <div class="${properties.kcFormCardClass!}">
+        
+        <div id="kc-content">
+            <div id="kc-content-wrapper">
+
+            <#-- App-initiated actions should not see warning messages about the need to complete the action -->
+            <#-- during login.                                                                               -->
+            <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
+                <div class="alert-${message.type} ${properties.kcAlertClass!} pf-m-<#if message.type = 'error'>danger<#else>${message.type}</#if>">
+                        <div class="pf-c-alert__icon">
+                        <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                        <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                        <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                        <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+                        </div>
+                        <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
+                </div>
+            </#if>
+
+            <#nested "form">
+
+            </div>
+        </div>
+
         </div>
     </div>
-
-    <div class="${properties.kcFormCardClass!}">
-       
-      <div id="kc-content"  style="width: 900px">
-        <div id="kc-content-wrapper" style="width: 500px">
-
-          <#-- App-initiated actions should not see warning messages about the need to complete the action -->
-          <#-- during login.                                                                               -->
-          <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-              <div class="alert-${message.type} ${properties.kcAlertClass!} pf-m-<#if message.type = 'error'>danger<#else>${message.type}</#if>">
-                    <div class="pf-c-alert__icon">
-                      <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                      <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                      <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                      <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                    </div>
-                    <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
-              </div>
-          </#if>
-
-          <#nested "form">
-
-        </div>
-      </div>
-
-    </div>
-
-   
-</div>
- <div class="login__footer" style="text-align: center; padding-top: 50px">
+    <div class="login__footer">
         <a href="https://qualifio.zendesk.com/hc/fr" target="_blank">Besoin d'aide ?</a> •
         <a href="https://qualifio.com/fr/politique-vie-privee/" target="_blank">Politique vie privée</a> •
         <a href="https://qualifio.com/blog/fr/" target="_blank">Blog</a>
-    </div></body>
+    </div>
+   
+</div>
+    
+</body>
 </html>
 </#macro>

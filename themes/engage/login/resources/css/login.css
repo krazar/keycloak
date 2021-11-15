@@ -14,8 +14,23 @@ html.login-pf,
   -moz-osx-font-smoothing: grayscale;
 }
 
-.login-pf-page .login-pf-page-header {
-  margin-bottom: 20px;
+.login-pf-page * {
+  outline: none;
+}
+
+.login-pf-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login__content {
+  margin: auto;
+  max-width: 610px;
+}
+
+.login__footer {
+  margin: auto auto 25px auto;
 }
 
 .login-pf-page .login-pf-page-header .kc-logo-text {
@@ -35,12 +50,15 @@ html.login-pf,
   margin: 0 auto;
   box-shadow: none;
   padding: 40px;
-  max-width: 500px;
   border: none;
   background-color: transparent;
   color: #ffffff;
   text-align: center;
   position: relative;
+}
+
+.wrapper__login__sso {
+  margin: auto 0;
 }
 
 h1 {
@@ -62,6 +80,10 @@ h1:after {
 input,
 input:focus {
   outline: none;
+}
+
+.login-pf-page .card-pf {
+  padding: 0px !important;
 }
 
 .login-pf-page .card-pf p {
@@ -220,4 +242,55 @@ ul {
 
 .fa-exclamation-triangle:before {
   content: "\f05a";
+}
+
+.wrapper__login__form__lang select {
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.login-pf-page .wrapper__login__form__lang:after {
+  z-index: 0;
+  font-size: 18px;
+  pointer-events: none;
+  top: 0;
+}
+
+p.wrapper__login__sso__choice__txt {
+  color: #557685 !important;
+  pointer-events: none;
+}
+
+input[type="text"], .btn-lg {
+  max-width: 270px;
+  margin: auto;
+  display: block;
+}
+
+#kc-form-wrapper {
+  width: 270px;
+}
+
+@media only screen and (max-width: 809px) {
+  #kc-form {
+    flex-direction: column;
+  }
+  .wrapper__login__choice {
+    margin: 50px auto 20px;
+  }
+
+  .wrapper__login__choice:before, .wrapper__login__choice:after {
+    height: 1px;
+    width: 70px;
+    top: 9px;
+  }
+
+  .wrapper__login__choice:before {
+    left: 10px;
+  }
+
+  .wrapper__login__choice:after {
+    right: 10px;
+  }
+
 }
