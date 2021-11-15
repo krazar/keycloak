@@ -20,7 +20,6 @@ services:
       # this allows to dynamically change the theme in local and directly see the update instead of re-building the image
       - ./themes/qualifio:/opt/bitnami/keycloak/themes/qualifio
       - ./themes/engage:/opt/bitnami/keycloak/themes/engage
-      - ./themes/base:/opt/bitnami/keycloak/themes/base
     environment:
       - KEYCLOAK_CREATE_ADMIN_USER=true
       - KEYCLOAK_ADMIN_USER=ku
