@@ -5,7 +5,9 @@
     ${msg("loginTotpTitle")}
      <#elseif section = "form">
    BLASSSX
+        <h2 class="login_title">Title</h2>
         <ol id="kc-totp-settings">
+        
             <li>
                 <p>${msg("loginTotpStep1")}</p>
 
@@ -20,19 +22,19 @@
                 <li>
                     <p>${msg("loginTotpManualStep2")}</p>
                     <p><span id="kc-totp-secret-key">${totp.totpSecretEncoded}</span></p>
-                    <p><a href="${totp.qrUrl}" id="mode-barcode">${msg("loginTotpScanBarcode")}</a></p>
+                    <p style="text-align: center;"><a href="${totp.qrUrl}" id="mode-barcode">${msg("loginTotpScanBarcode")}</a></p>
                 </li>
                 <li>
                     <p>${msg("loginTotpManualStep3")}</p>
                     <p>
-                    <ul>
-                        <li id="kc-totp-type">${msg("loginTotpType")}: ${msg("loginTotp." + totp.policy.type)}</li>
-                        <li id="kc-totp-algorithm">${msg("loginTotpAlgorithm")}: ${totp.policy.getAlgorithmKey()}</li>
-                        <li id="kc-totp-digits">${msg("loginTotpDigits")}: ${totp.policy.digits}</li>
+                    <ul class="highlight_content">
+                        <li id="kc-totp-type"><b>${msg("loginTotpType")}:</b> ${msg("loginTotp." + totp.policy.type)}</li>
+                        <li id="kc-totp-algorithm"><b>${msg("loginTotpAlgorithm")}:</b> ${totp.policy.getAlgorithmKey()}</li>
+                        <li id="kc-totp-digits"><b>${msg("loginTotpDigits")}:</b> ${totp.policy.digits}</li>
                         <#if totp.policy.type = "totp">
-                            <li id="kc-totp-period">${msg("loginTotpInterval")}: ${totp.policy.period}</li>
+                            <li id="kc-totp-period"><b>${msg("loginTotpInterval")}:</b> ${totp.policy.period}</li>
                         <#elseif totp.policy.type = "hotp">
-                            <li id="kc-totp-counter">${msg("loginTotpCounter")}: ${totp.policy.initialCounter}</li>
+                            <li id="kc-totp-counter"><b>${msg("loginTotpCounter")}:</b> ${totp.policy.initialCounter}</li>
                         </#if>
                     </ul>
                     </p>
@@ -52,19 +54,20 @@
 
         <form action="${url.loginAction}" class="${properties.kcFormClass!}" id="kc-totp-settings-form" method="post">
             <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcInputWrapperClass!}">
-                    <label for="totp" class="control-label">${msg("authenticatorCode")}</label> <span class="required">*</span>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="totp" name="totp" autocomplete="off" class="${properties.kcInputClass!}"
-                           aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>"
-                    />
+                <div class="${properties.kcInputWrapperClass!} opt_form">
+                    <label for="totp" class="control-label">${msg("authenticatorCode")}<span class="required">*</span></label>
+                    <div class="opt_form_input">
+                        <input type="text" id="totp" name="totp" autocomplete="off" class="${properties.kcInputClass!}"
+                            aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>" placeholder="__ __ __ __ __ __"
+                        />
 
-                    <#if messagesPerField.existsError('totp')>
-                        <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('totp'))?no_esc}
-                        </span>
-                    </#if>
+                        <#if messagesPerField.existsError('totp')>
+                            <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                ${kcSanitize(messagesPerField.get('totp'))?no_esc}
+                            </span>
+                        </#if>
+                    </div>
+                    
 
                 </div>
                 <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
@@ -72,20 +75,19 @@
             </div>
 
             <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcInputWrapperClass!}">
-                    <label for="userLabel" class="control-label">${msg("loginTotpDeviceName")}</label> <#if totp.otpCredentials?size gte 1><span class="required">*</span></#if>
-                </div>
+                <div class="${properties.kcInputWrapperClass!} opt_form">
+                    <label for="userLabel" class="control-label">${msg("loginTotpDeviceName")}<#if totp.otpCredentials?size gte 1><span class="required">*</span></#if></label>
+                    <div class="opt_form_input">
+                        <input type="text" class="${properties.kcInputClass!}" id="userLabel" name="userLabel" autocomplete="off"
+                           aria-invalid="<#if messagesPerField.existsError('userLabel')>true</#if>" placeholder="Roger's Mobile"
+                        />
 
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" class="${properties.kcInputClass!}" id="userLabel" name="userLabel" autocomplete="off"
-                           aria-invalid="<#if messagesPerField.existsError('userLabel')>true</#if>"
-                    />
-
-                    <#if messagesPerField.existsError('userLabel')>
-                        <span id="input-error-otp-label" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('userLabel'))?no_esc}
-                        </span>
-                    </#if>
+                        <#if messagesPerField.existsError('userLabel')>
+                            <span id="input-error-otp-label" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                ${kcSanitize(messagesPerField.get('userLabel'))?no_esc}
+                            </span>
+                        </#if>
+                    </div>
                 </div>
             </div>
 

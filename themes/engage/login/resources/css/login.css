@@ -419,6 +419,10 @@ span.fa.fa-fw.fa-exclamation-circle {
   margin: auto;
 }
 
+.required {
+  color: #fba026;
+}
+
 .login-pf-page .login-pf-page-header .kc-logo-text {
   background-image: url(../img/logo-qualifio-white.svg);
   background-repeat: no-repeat;
@@ -700,6 +704,88 @@ img#kc-totp-secret-qr-code {
   margin: auto;
   display: block;
   margin-bottom: -10px;
+}
+
+.opt_form {
+  display: flex;
+  justify-content: center;
+}
+
+.opt_form .control-label {
+  margin: 15px 10px;
+  min-width: 180px;
+  text-align: left;
+}
+
+.opt_form_input {
+  width: 100%;
+  max-width: 270px;
+}
+
+.pf-m-error.required {
+  color: #cb2028;
+  margin-top: 5px;
+  display: block;
+  font-weight: 600;
+}
+
+ol#kc-totp-settings {
+  max-width: 450px;
+  margin: auto;
+}
+
+ol#kc-totp-settings li {
+  margin-bottom: 15px;
+}
+
+::marker {
+  color: #fba026;
+}
+
+.login_title {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 10px 0px 5px;
+  font-size: 22px;
+  text-align: center;
+}
+
+input[type="text"] {
+  font-family: "Open Sans";
+}
+
+.login_title:after {
+  background: #fba026;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 65px;
+  margin: 10px auto;
+}
+
+#kc-totp-secret-key, .highlight_content {
+  color: #fba026;
+  font-weight: bold;
+  background: #052b3d;
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+.highlight_content {
+  text-align: left;
+  font-weight: normal;
+}
+ol#kc-totp-settings .highlight_content li {
+  margin-bottom: 5px;
+}
+
+.highlight_content b {
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 809px) {
