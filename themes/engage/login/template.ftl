@@ -34,7 +34,7 @@
             <script src="${script}" type="text/javascript"></script>
         </#list>
     </#if>
-    <link href="${url.resourcesPath}/css/manager.css" rel="stylesheet" />
+    <#--  <link href="${url.resourcesPath}/css/manager.css" rel="stylesheet" />  -->
 </head>
 
 <body class="${properties.kcBodyClass!}">

@@ -41,7 +41,7 @@
                 <li>
                     <p>${msg("loginTotpStep2")}</p>
                     <img id="kc-totp-secret-qr-code" src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode"><br/>
-                    <p><a href="${totp.manualUrl}" id="mode-manual">${msg("loginTotpUnableToScan")}</a></p>
+                    <p style="text-align: center;"><a href="${totp.manualUrl}" id="mode-manual">${msg("loginTotpUnableToScan")}</a></p>
                 </li>
             </#if>
             <li>
