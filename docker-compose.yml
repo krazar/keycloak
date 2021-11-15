@@ -8,6 +8,9 @@ services:
       - POSTGRESQL_DATABASE=bitnami_keycloak
     volumes:
       - "postgresql_data:/bitnami/postgresql"
+    networks:
+      - qualifio
+
   keycloak:
     build:
       context: .
@@ -23,6 +26,25 @@ services:
       - KEYCLOAK_ADMIN_PASSWORD=ku
     depends_on:
       - postgresql
+    networks:
+      - qualifio
+
+  smtp:
+    image: maildev/maildev
+    ports:
+      - 1081:80
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 250M
+    networks:
+      - qualifio
+
 volumes:
   postgresql_data:
     driver: local
+
+networks:
+  qualifio:
+    external: true

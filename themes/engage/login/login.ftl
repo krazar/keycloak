@@ -80,15 +80,15 @@
                 <#--  todo make this dynamic  -->
                 <div class="wrapper__login__sso__button">
                     <#list social.providers as p>
-                        <!-- idp ${p.displayName} -->
-                        <#if p.displayName == "google">
+                        <!-- idp ${p.displayName?lower_case} dddsdsdf-->
+                        <#if p.displayName?lower_case == "google">
                             <a id="google__button" href="${p.loginUrl}">
                                 <img src="${url.resourcesPath}/img/google-g-logo.svg">
                                 <span>${msg("connectWithGoogle")}</span>
                             </a>
                         </#if>
-                        <#if p.displayName == "azure">
-                            <a id="azure__button" href="start-sso.cfm?idp=microsoft">
+                        <#if p.displayName?lower_case == "microsoft">
+                            <a id="azure__button" href="${p.loginUrl}">
                                 <img src="${url.resourcesPath}/img/azure-logo.svg">
                                 <span>${msg("connectWithAzure")}</span>
                             </a>
