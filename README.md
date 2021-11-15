@@ -22,18 +22,31 @@ You can also visit different screens to see your theme in action :
 - Forgot Your Password (maybe not usefull in our case): http://localhost/auth/realms/master/login-actions/reset-credentials?client_id=security-admin-console&tab_id=B4ujmzHBTyw
 - Register (probably not usefull neither): http://localhost/auth/realms/master/login-actions/registration?client_id=security-admin-console&tab_id=B4ujmzHBTyw
 
-> Note that in local the theme is automatically configured to be the "qualifio" theme but in staging and production it must be configured at the master realm level.
+> Note that in local the theme is automatically configured to be the "engage" theme but in staging and production it must be configured at the master realm level.
 
-> Note 2 : currently the theme files are cached, meaning that each time you do a change you must hard reload your page to force clearing the cache and actually see your changes (it's not really convenient but we didn't find a solution for now).
+## Caching
 
-> Note 3 : to by pass local cache problem see https://keycloakthemes.com/blog/how-to-turn-off-the-keycloak-theme-cache (second way)
+To shunt the content cache in Keaycloak, to allow theme development, one must apply the following statements in a terminal.  
+(more info here https://keycloakthemes.com/blog/how-to-turn-off-the-keycloak-theme-cache)
 
 1. docker compose exec keycloak /bin/bash
 2. cd /opt/bitnami/keycloak/
-3. bin/jboss-cli.sh
+3. bin/jboss-cli.sh (and wait for the JBoss prompt)
 4. on the prompt, type `connect`
-5. Run the following commands to disable the theme caching
-   > /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheThemes,value=false)  
-   > /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheTemplates,value=false)  
-   > /subsystem=keycloak-server/theme=defaults/:write-attribute(name=staticMaxAge,value=-1)
+5. Run the following commands to disable the theme caching:  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheThemes,value=false)  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheTemplates,value=false)  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=staticMaxAge,value=-1)
 6. on the prompt, type `reload`
+
+## email configuration
+
+This project comes with MailDev.
+
+- First make sure MailDev is running on http://localhost:1081
+- login in Keycloak (http://localhost)
+- go to `Realm settings > email`
+- provide the following info
+  - host: smtp
+  - port: 25
+- test the connection and expect a mail in MailDev
