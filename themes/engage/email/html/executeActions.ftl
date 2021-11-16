@@ -3,12 +3,20 @@
 </#outputformat>
 
 <html>
-<body style="text-align: center">
-<div style="background-color: #12384a; color: white; font: 14px 'Open Sans', sans-serif; padding: 50px">
-    <div style="width: 85%;max-width: 225px;min-width: 225px;margin: 0 auto 40px;">
-        <img src="https://manager.qualifio.com/app/imagesv03/flat_design/nav_general/logo-qualifio-white.svg">
-    </div>
-    ${kcSanitize(msg("executeActionsBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration)))?no_esc}
-</div>
-</body>
+    <body bgcolor="#eaeaea" style="background-color:#eaeaea; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #D5D5D5; margin-top: 25px; margin-bottom: 25px;">
+            <tr>
+                <td>
+                    <img alt="Qualifio" src="http://files.qualifio.com/images/banner_mail_gdpr1.jpg" style="width: 600px; max-height: 100px; max-width: 100%;"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 50px; color: #666666; background-color:#ffffff;">
+                    ${kcSanitize(msg("executeActionsBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration)))?no_esc}
+                </td>
+            </tr>
+        </table>
+    </body>
 </html>
+

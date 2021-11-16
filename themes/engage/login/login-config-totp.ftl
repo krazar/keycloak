@@ -1,10 +1,8 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayRequiredFields=false displayMessage=!messagesPerField.existsError('totp','userLabel'); section>
     <#if section = "header">
-      BLASSSX
     ${msg("loginTotpTitle")}
      <#elseif section = "form">
-   BLASSSX
         <h2 class="login_title">Title</h2>
         <ol id="kc-totp-settings">
         
