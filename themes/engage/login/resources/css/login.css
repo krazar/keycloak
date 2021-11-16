@@ -272,6 +272,11 @@ select#switch option {
   color: #ffffff;
 }
 
+#sso__button {
+  background-color: #61c1db;
+  color: #ffffff;
+}
+
 #custom_sso__button {
   background-color: #61C1DB;
   color: #ffffff;
