@@ -3,17 +3,11 @@
     <#if section = "header">
     ${msg("loginTotpTitle")}
      <#elseif section = "form">
-        <h2 class="login_title">Title</h2>
+        <h2 class="login_title">${msg("totpTitle")}</h2>
         <ol id="kc-totp-settings">
         
             <li>
                 <p>${msg("loginTotpStep1")}</p>
-
-                <ul id="kc-totp-supported-apps">
-                    <#list totp.policy.supportedApplications as app>
-                        <li>${app}</li>
-                    </#list>
-                </ul>
             </li>
 
             <#if mode?? && mode = "manual">
@@ -105,5 +99,6 @@
                 />
             </#if>
         </form>
+        <div style="text-align: center">${msg("totpFooter")} <a href="${msg('totpFooterLink')}">${msg("totpFooterLinkText")}</a>.</div>
     </#if>
 </@layout.registrationLayout>
