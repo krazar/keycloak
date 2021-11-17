@@ -1,2 +1,2 @@
-FROM bitnami/keycloak:12.0.4-debian-10-r59 as keycloak
+FROM bitnami/keycloak:15.0.2-debian-10-r86 as keycloak
 COPY ./themes/qualifio /opt/bitnami/keycloak/themes/qualifio
