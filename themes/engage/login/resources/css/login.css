@@ -214,7 +214,7 @@ select#switch option {
   text-transform: uppercase;
   display: inline;
   background-color: #12384a;
-  padding: 5px 0;
+  padding: 5px;
   color: #557685;
   font-weight: 700;
   position: relative;
@@ -224,6 +224,10 @@ select#switch option {
 .wrapper__login__sso__button {
   display: flex;
   flex-direction: column;
+}
+
+.wrapper__login__sso__button a:hover {
+  text-decoration: none;
 }
 
 .wrapper__login__sso__button a,
@@ -801,18 +805,12 @@ ol#kc-totp-settings .highlight_content li {
     margin: 50px auto 20px;
   }
 
-  .wrapper__login__choice:before, .wrapper__login__choice:after {
+  .wrapper__login__choice:before {
     height: 1px;
     width: 70px;
     top: 9px;
-  }
-
-  .wrapper__login__choice:before {
-    left: 10px;
-  }
-
-  .wrapper__login__choice:after {
-    right: 10px;
+    position: relative;
+    right: 0;
   }
 
 }
