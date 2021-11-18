@@ -4,13 +4,14 @@ Custom built keycloak image based on Bitnami's image.
 
 ## How to customize the theme
 
-Take a look at: https://www.keycloak.org/docs/latest/server_development/index.html#_themes to get all informations about how to customize a theme. 
+Take a look at: https://www.keycloak.org/docs/latest/server_development/index.html#_themes to get all informations about how to customize a theme.
 
 In our case (for now), we only need to customize the login screens. The login theme can be found under `themes/qualifio/login`.
 
-To run the image in local, do the following comand `docker-compose up`. Then visit http://localhost/auth/ and click on "Administration Console". 
+To run the image in local, do the following comand `docker-compose up`. Then visit http://localhost/auth/ and click on "Administration Console".
 
-You can also visit different screens to see your theme in action : 
+You can also visit different screens to see your theme in action :
+
 - Login page: http://localhost/auth/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Fadmin%2Fmaster%2Fconsole%2F&state=4c7311f7-850d-475b-8725-cd39aa62cede&response_mode=fragment&response_type=code&scope=openid&nonce=61ba9017-6e31-4d5e-8f86-d4f4cb7a0c5c&code_challenge=hagSKr7xZjrHI4ev8qPLb1nTHfZWUVd_LbSP5kax3ks&code_challenge_method=S256
   - Submit an invalid email/password to see an error message
 - Invalid request: http://localhost/auth/realms/master/protocol/openid-connect/auth
@@ -21,6 +22,31 @@ You can also visit different screens to see your theme in action :
 - Forgot Your Password (maybe not usefull in our case): http://localhost/auth/realms/master/login-actions/reset-credentials?client_id=security-admin-console&tab_id=B4ujmzHBTyw
 - Register (probably not usefull neither): http://localhost/auth/realms/master/login-actions/registration?client_id=security-admin-console&tab_id=B4ujmzHBTyw
 
-> Note that in local the theme is automatically configured to be the "qualifio" theme but in staging and production it must be configured at the master realm level.
+> Note that in local the theme is automatically configured to be the "engage" theme but in staging and production it must be configured at the master realm level.
 
-> Note 2 : currently the theme files are cached, meaning that each time you do a change you must hard reload your page to force clearing the cache and actually see your changes (it's not really convenient but we didn't find a solution for now).
+## Caching
+
+To shunt the content cache in Keaycloak, to allow theme development, one must apply the following statements in a terminal.  
+(more info here https://keycloakthemes.com/blog/how-to-turn-off-the-keycloak-theme-cache)
+
+1. docker compose exec keycloak /bin/bash
+2. cd /opt/bitnami/keycloak/
+3. bin/jboss-cli.sh (and wait for the JBoss prompt)
+4. on the prompt, type `connect`
+5. Run the following commands to disable the theme caching:  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheThemes,value=false)  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=cacheTemplates,value=false)  
+   /subsystem=keycloak-server/theme=defaults/:write-attribute(name=staticMaxAge,value=-1)
+6. on the prompt, type `reload`
+
+## email configuration
+
+This project comes with MailDev.
+
+- First make sure MailDev is running on http://localhost:1081
+- login in Keycloak (http://localhost)
+- go to `Realm settings > email`
+- provide the following info
+  - host: smtp
+  - port: 25
+- test the connection and expect a mail in MailDev
