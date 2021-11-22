@@ -7,7 +7,7 @@
         <ol id="kc-totp-settings">
         
             <li>
-                <p>${msg("loginTotpStep1")}</p>
+                <p>${msg("loginTotpStep1")?no_esc}</p>
             </li>
 
             <#if mode?? && mode = "manual">
@@ -20,14 +20,15 @@
                     <p>${msg("loginTotpManualStep3")}</p>
                     <p>
                     <ul class="highlight_content">
-                        <li id="kc-totp-type"><b>${msg("loginTotpType")}:</b> ${msg("loginTotp." + totp.policy.type)}</li>
-                        <li id="kc-totp-algorithm"><b>${msg("loginTotpAlgorithm")}:</b> ${totp.policy.getAlgorithmKey()}</li>
-                        <li id="kc-totp-digits"><b>${msg("loginTotpDigits")}:</b> ${totp.policy.digits}</li>
-                        <#if totp.policy.type = "totp">
+                        <li id="kc-totp-type">${msg("loginTotpType")?no_esc}</li>
+                        <li id="kc-totp-algorithm">${msg("loginTotpAlgorithm")?no_esc}</li>
+                        <li id="kc-totp-digits">${msg("loginTotpDigits")?no_esc}</li>
+                        <li id="kc-totp-period">${msg("loginTotpInterval")?no_esc}</li>
+                        <#--  <#if totp.policy.type = "totp">
                             <li id="kc-totp-period"><b>${msg("loginTotpInterval")}:</b> ${totp.policy.period}</li>
                         <#elseif totp.policy.type = "hotp">
                             <li id="kc-totp-counter"><b>${msg("loginTotpCounter")}:</b> ${totp.policy.initialCounter}</li>
-                        </#if>
+                        </#if>  -->
                     </ul>
                     </p>
                 </li>
@@ -71,7 +72,7 @@
                     <label for="userLabel" class="control-label">${msg("loginTotpDeviceName")}<#if totp.otpCredentials?size gte 1><span class="required">*</span></#if></label>
                     <div class="opt_form_input">
                         <input type="text" class="${properties.kcInputClass!}" id="userLabel" name="userLabel" autocomplete="off"
-                           aria-invalid="<#if messagesPerField.existsError('userLabel')>true</#if>" placeholder="Roger's Mobile"
+                           aria-invalid="<#if messagesPerField.existsError('userLabel')>true</#if>" placeholder="${msg('loginUserPlaceholder')}"
                         />
 
                         <#if messagesPerField.existsError('userLabel')>
@@ -99,6 +100,6 @@
                 />
             </#if>
         </form>
-        <div style="text-align: center">${msg("totpFooter")} <a href="${msg('totpFooterLink')}">${msg("totpFooterLinkText")}</a>.</div>
+        <div style="text-align: center">${msg("totpFooter")?no_esc}</div>
     </#if>
 </@layout.registrationLayout>
