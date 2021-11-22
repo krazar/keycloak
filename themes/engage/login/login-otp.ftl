@@ -29,6 +29,9 @@
                             <label for="otp" class="${properties.kcLabelClass!}">${msg("loginOtpOneTime")}</label>
                         </div>
 
+<div>
+${msg('authenticatorCode')}
+</div>
                     <div class="${properties.kcInputWrapperClass!}">
                         <input id="otp" name="otp" autocomplete="off" type="text" class="${properties.kcInputClass!}"
                                autofocus aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>"/>
