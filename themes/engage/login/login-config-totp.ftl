@@ -100,6 +100,7 @@
                 />
             </#if>
         </form>
+        <hr>
         <div style="text-align: center">${msg("totpFooter")?no_esc}</div>
     </#if>
 </@layout.registrationLayout>
