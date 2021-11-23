@@ -740,6 +740,17 @@ img#kc-totp-secret-qr-code {
   text-align: left;
 }
 
+.opt_form .control-label__otp {
+  min-width: inherit;
+  white-space: nowrap;
+  margin: auto 10px auto 0;
+}
+
+.opt_form__otp {
+  margin: 20px 0;
+}
+
+
 .opt_form_input {
   width: 100%;
   max-width: 270px;
