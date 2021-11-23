@@ -20,6 +20,10 @@ body.login {
   background: #052b3d;
 }
 
+#kc-form-login .form-group.login-pf-settings {
+  margin: 0;
+}
+
 .wrapper {
   flex: 1 0 auto;
   display: flex;
@@ -388,6 +392,16 @@ body {
   color: #F8FEFF;
 }
 
+
+.alert-success {
+  border: 2px solid #74c820 !important;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.alert-success.pf-c-alert.pf-m-inline:before {
+  background: #74c820;
+}
 
 /* /LOGIN */
 
