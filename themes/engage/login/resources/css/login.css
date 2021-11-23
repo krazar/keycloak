@@ -16,7 +16,7 @@ body.login {
   color: #ffffff;
 }
 
-select#switch option {
+.login__header select option {
   background: #052b3d;
 }
 
