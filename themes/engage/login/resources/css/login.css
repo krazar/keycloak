@@ -16,8 +16,12 @@ body.login {
   color: #ffffff;
 }
 
-select#switch option {
+.login__header select option {
   background: #052b3d;
+}
+
+#kc-form-login .form-group.login-pf-settings {
+  margin: 0;
 }
 
 .wrapper {
@@ -389,6 +393,16 @@ body {
 }
 
 
+.alert-success {
+  border: 2px solid #74c820 !important;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.alert-success.pf-c-alert.pf-m-inline:before {
+  background: #74c820;
+}
+
 /* /LOGIN */
 
 
@@ -725,6 +739,17 @@ img#kc-totp-secret-qr-code {
   min-width: 180px;
   text-align: left;
 }
+
+.opt_form .control-label__otp {
+  min-width: inherit;
+  white-space: nowrap;
+  margin: auto 10px auto 0;
+}
+
+.opt_form__otp {
+  margin: 20px 0;
+}
+
 
 .opt_form_input {
   width: 100%;

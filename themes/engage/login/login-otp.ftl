@@ -26,22 +26,22 @@
 
                     <div class="${properties.kcFormGroupClass!}">
                         <div class="${properties.kcLabelWrapperClass!}">
-                            <label for="otp" class="${properties.kcLabelClass!}">${msg("loginOtpOneTime")}</label>
+                            <p>${msg("loginOtpOneTime")}</p>
                         </div>
 
-<div>
-${msg('authenticatorCode')}
-</div>
-                    <div class="${properties.kcInputWrapperClass!}">
-                        <input id="otp" name="otp" autocomplete="off" type="text" class="${properties.kcInputClass!}"
-                               autofocus aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>"/>
+                    <div class="${properties.kcInputWrapperClass!} opt_form opt_form__otp">
+                        <label for="otp" class="control-label control-label__otp">${msg('authenticatorCode')}</label>
+                        <div class="opt_form_input">
+                            <input id="otp" name="otp" autocomplete="off" type="text" class="${properties.kcInputClass!}"
+                                autofocus aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>" placeholder="__ __ __ __ __ __"/>
 
-                        <#if messagesPerField.existsError('totp')>
-                            <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}"
-                                  aria-live="polite">
-                                ${kcSanitize(messagesPerField.get('totp'))?no_esc}
-                            </span>
-                        </#if>
+                            <#if messagesPerField.existsError('totp')>
+                                <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}"
+                                    aria-live="polite">
+                                    ${kcSanitize(messagesPerField.get('totp'))?no_esc}
+                                </span>
+                            </#if>
+                        </div>
                     </div>
                 </div>
 
