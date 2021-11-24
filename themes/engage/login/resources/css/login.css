@@ -786,8 +786,9 @@ ol#kc-totp-settings li {
   text-align: center;
 }
 
-input[type="text"] {
-  font-family: "Open Sans";
+input[type="text"], #password {
+  font-family: "Raleway";
+  font-weight: 600;
 }
 
 .login_title:after {
