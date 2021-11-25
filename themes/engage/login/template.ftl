@@ -95,9 +95,9 @@
         </div>
     </div>
     <div class="login__footer">
-        <a href="https://qualifio.zendesk.com/hc/fr" target="_blank">Besoin d'aide ?</a> •
-        <a href="https://qualifio.com/fr/politique-vie-privee/" target="_blank">Politique vie privée</a> •
-        <a href="https://qualifio.com/blog/fr/" target="_blank">Blog</a>
+        ${msg('footerZendesk')?no_esc} • 
+        ${msg('footerPrivate')?no_esc} • 
+        ${msg('footerBlog')?no_esc} 
     </div>
    
 </div>
