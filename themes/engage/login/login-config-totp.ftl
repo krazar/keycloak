@@ -41,7 +41,7 @@
             </#if>
             <li>
                 <p>${msg("loginTotpStep3")}</p>
-                <p>${msg("loginTotpStep3DeviceName")}</p>
+                <#--  <p>${msg("loginTotpStep3DeviceName")}</p>  -->
             </li>
         </ol>
 
@@ -67,7 +67,7 @@
                 <#if mode??><input type="hidden" id="mode" name="mode" value="${mode}"/></#if>
             </div>
 
-            <div class="${properties.kcFormGroupClass!}">
+            <#--  <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcInputWrapperClass!} opt_form">
                     <label for="userLabel" class="control-label">${msg("loginTotpDeviceName")}<#if totp.otpCredentials?size gte 1><span class="required">*</span></#if></label>
                     <div class="opt_form_input">
@@ -82,7 +82,7 @@
                         </#if>
                     </div>
                 </div>
-            </div>
+            </div>  -->
 
             <#if isAppInitiatedAction??>
                 <input type="submit"
