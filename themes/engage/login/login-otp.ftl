@@ -1,7 +1,7 @@
 <#import "template.ftl" as layout>
     <@layout.registrationLayout displayMessage=!messagesPerField.existsError('totp'); section>
         <#if section="header">
-            ${msg("doLogIn")}
+            ${msg("doLogInTotp")}
             <#elseif section="form">
             <h1>${msg('authenticatorCodeTitle')}</h1>
                 <form id="kc-otp-login-form" class="${properties.kcFormClass!}" action="${url.loginAction}"
@@ -54,7 +54,7 @@
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                             <input
                                 class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
-                                name="login" id="kc-login" type="submit" value="${msg("doLogIn")}" />
+                                name="login" id="kc-login" type="submit" value="${msg("doLogInTotp")}" />
                         </div>
                     </div>
                 </form>
