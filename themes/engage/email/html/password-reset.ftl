@@ -1,8 +1,9 @@
 <html>
-<head>
- <meta charset=“utf-8”>
-    <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8” />
-</head>
+    <head>
+        <meta charset=“utf-8”>
+        <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8” />
+        <title>Qualifio</title>
+    </head>
     <body bgcolor="#eaeaea" style="background-color:#eaeaea; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0;">
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #D5D5D5; margin-top: 25px; margin-bottom: 25px;">
             <tr>
