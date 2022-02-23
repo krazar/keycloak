@@ -280,6 +280,16 @@ body.login {
   color: #ffffff;
 }
 
+#social-google {
+  background-color: #ffffff;
+  color: #666666;
+}
+
+#social-microsoft {
+  background-color: #0089d6;
+  color: #ffffff;
+}
+
 #sso__button {
   background-color: #61c1db;
   color: #ffffff;

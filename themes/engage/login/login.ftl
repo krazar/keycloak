@@ -89,29 +89,15 @@
                 <#--  todo make this dynamic  -->
                 <div class="wrapper__login__sso__button">
                     <#list social.providers as p>
-                        <!-- idp ${p.displayName?lower_case} dddsdsdf-->
-                        <#if p.displayName?lower_case == "google">
-                            <a id="google__button" href="${p.loginUrl}">
-                                <img src="${url.resourcesPath}/img/google-g-logo.svg">
-                                <span>${msg("connectWithGoogle")}</span>
-                            </a>
-                        </#if>
-                        <#if p.displayName?lower_case == "microsoft">
-                            <a id="azure__button" href="${p.loginUrl}">
-                                <img src="${url.resourcesPath}/img/azure-logo.svg">
-                                <span>${msg("connectWithAzure")}</span>
-                            </a>
-                        </#if>
-
-                        <#--  <a id="social-${p.alias}" class=" google__button ${properties.kcFormSocialAccountListButtonClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
+                        <a id="social-${p.alias}" class="google__button"
                                 type="button" href="${p.loginUrl}">
                             <#if p.iconClasses?has_content>
-                                <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>
-                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${p.displayName!}</span>
+                                <img src="${url.resourcesPath}/img/${p.displayName}-g-logo.svg">
+                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${msg("connectWith${p.displayName}")}</span>
                             <#else>
-                                <span class="${properties.kcFormSocialAccountNameClass!}">${p.displayName!}</span>
+                                <span class="${properties.kcFormSocialAccountNameClass!}">${msg("connectWith${p.displayName}")}</span>
                             </#if>
-                        </a>  -->
+                        </a>
                     </#list>
                     <a id="sso__button" href="https://manager.qualifio.com/app/login-sso.cfm?iso=fr">
                         <span>${msg("connectWithSso")}</span>
