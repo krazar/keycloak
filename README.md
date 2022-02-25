@@ -53,6 +53,10 @@ This project comes with MailDev.
 
 ## deployment
 
+### Staging
 - first create a tag on master: https://gitlab.qualif.io/docker/keycloak/-/tags
 - then update the K8s and set the tag in this file: https://gitlab.qualif.io/infrastructure/k8s/-/blob/master/components/security/keycloak/values.yaml
-- finally open a ticket to infra for deployment
+- finally open a ticket to infra for deployment (https://gitlab.qualif.io/infrastructure/tickets/-/issues)
+
+### Production
+- open a ticket to infra for deployment (https://gitlab.qualif.io/infrastructure/tickets/-/issues)
