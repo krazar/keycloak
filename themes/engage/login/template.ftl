@@ -44,7 +44,9 @@
         <#elseif actionUri?has_content>
             <#assign backUrl = actionUri>
         </#if>
-        <span><i class="fa-solid fa-arrow-left"></i><a href="${backUrl}">${msg("backToLogin")}</a></span>
+        <div style="padding-left: 10px">
+            <span><a href="${backUrl}">&lt; ${msg("backToLogin")}</a></span>
+        </div>
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale">
                 <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
