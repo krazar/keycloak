@@ -10,18 +10,10 @@
 
     <#elseif section = "form">
     <!--- qualifio hack to intercept action page --->
-    <div id="kc-welcome-to-qualifio-message">
-        <#if requiredActions??>
-            <#list requiredActions> 
-                <#items as reqActionItem>
-                    <#if msg("requiredAction.${reqActionItem}") == "Verify Email">
-                    <h2>${kcSanitize(msg('joinQualifio'))?no_esc}</h2>
-                    <!-- for nico: add dash here -->
-                    </#if>
-                </#items>
-            </#list>
-        </#if>
-    </div>
+    <#if message.summary == msg('confirmExecutionOfActions')>
+        <h2>${kcSanitize(msg('joinQualifio'))?no_esc}</h2>
+        <!-- for nico: add dash here -->
+    </#if>
 
     <div id="kc-info-message">
         <p class="instruction">
