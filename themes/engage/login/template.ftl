@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true>
+<#macro registrationLayout bodyClass="" displayInfo=true displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}">
 
@@ -38,6 +38,15 @@
 <body class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
     <div class="login__header">
+        <#assign backUrl = client.baseUrl>
+        <#if pageRedirectUri?has_content>
+            <#assign backUrl = pageRedirectUri>
+        <#elseif actionUri?has_content>
+            <#assign backUrl = actionUri>
+        </#if>
+        <div style="padding-left: 10px">
+            <span><a href="${backUrl}">&lt; ${msg("backToLogin")}</a></span>
+        </div>
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale">
                 <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
