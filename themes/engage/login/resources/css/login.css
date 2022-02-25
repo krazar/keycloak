@@ -833,6 +833,32 @@ ol#kc-totp-settings .highlight_content li {
   color: #ffffff;
 }
 
+.kc-welcome-to-qualifio-message {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.kc-welcome-to-qualifio-message h2 {
+  font-weight: bold;
+}
+
+.kc-welcome-to-qualifio-message hr {
+  border: 2px solid #fba026;
+  border-radius: 2px;
+  width: 70px;
+  margin: auto;
+}
+
+.backToLogin {
+  color: #557685;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.do-actions {
+  margin-top: 50px;
+}
+
 @media only screen and (max-width: 809px) {
   #kc-form {
     flex-direction: column;
