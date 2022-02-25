@@ -12,8 +12,7 @@
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #D5D5D5; margin-top: 25px; margin-bottom: 25px;">
             <tr>
                 <td>
-                    <img alt="Qualifio" src="http://files.qualifio.com/images/banner_mail_gdpr1.jpg" style="width: 600px; max-height: 100px; max-width: 100%;"
-                    />
+                    <img alt="Qualifio" src="http://files.qualifio.com/images/banner_mail_gdpr1.jpg" style="width: 600px; max-height: 100px; max-width: 100%;" />
                 </td>
             </tr>
             <tr>
