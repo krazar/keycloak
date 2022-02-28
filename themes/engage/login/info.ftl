@@ -14,12 +14,18 @@
     <#elseif section = "form">
 
         <#if !requiredActions??>
-        <script>
-            location.replace("${client.baseUrl}");
-        </script>
+            <#--  <#if client?? && client.baseUrl?has_content>
+                <#assign backUrl = client.baseUrl >
+            <#else>  -->
+                <#assign backUrl = msg('backToLoginUrl') >
+            <#--  </#if>  -->
+            ${kcSanitize(msg('welcomeAllGoodText'))?no_esc}
+            <a type="button" class="pf-c-button pf-m-primary pf-m-block btn-lg" style="margin-top: 30px" href="${backUrl}">
+                <span>${kcSanitize(msg('welcomeAllGoodCtaText'))?no_esc}</span>
+            </a>
         </#if>
 
-
+        
         <#--  header is not the same with VERIFY_EMAIL  -->
         <#if requiredActions??>
             <#if requiredActions?seq_contains("VERIFY_EMAIL")>
