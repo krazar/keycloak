@@ -38,10 +38,6 @@
 <body class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
     <div class="login__header">
-        <#assign backUrl = client.baseUrl>
-        <div style="padding-left: 10px">
-            <span><a href="${backUrl}" class="backToLogin">&lt; ${msg("backToLogin")}</a></span>
-        </div>
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale">
                 <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
