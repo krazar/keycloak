@@ -92,7 +92,7 @@
                         <a id="social-${p.alias}" class="google__button"
                                 type="button" href="${p.loginUrl}">
                             <#if p.iconClasses?has_content>
-                                <img src="${url.resourcesPath}/img/${p.displayName}-g-logo.svg">
+                                <img src="${url.resourcesPath}/img/${p.displayName?lower_case}-g-logo.svg">
                                 <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${msg("connectWith${p.displayName}")}</span>
                             <#else>
                                 <span class="${properties.kcFormSocialAccountNameClass!}">${msg("connectWith${p.displayName}")}</span>
