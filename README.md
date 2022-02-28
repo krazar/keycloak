@@ -55,8 +55,7 @@ This project comes with MailDev.
 
 ### Staging
 - first create a tag on master: https://gitlab.qualif.io/docker/keycloak/-/tags
-- then update the K8s and set the tag in this file: https://gitlab.qualif.io/infrastructure/k8s/-/blob/master/components/security/keycloak/values.yaml
-- finally open a ticket to infra for deployment (https://gitlab.qualif.io/infrastructure/tickets/-/issues)
-
+- then open a ticket to infra and provide tag name (https://gitlab.qualif.io/infrastructure/tickets/-/issues) 
+- be aware that Loyalty Demo is linked to staging keycloak; so staging release must be planned 
 ### Production
 - open a ticket to infra for deployment (https://gitlab.qualif.io/infrastructure/tickets/-/issues)
