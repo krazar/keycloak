@@ -38,16 +38,14 @@
 <body class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
     <div class="login__header">
-        <div style="padding-left: 10px; padding-top: 20px;">
-            <#if client?? && client.baseUrl?has_content>
-                <!-- backurl: client.baseUrl = ${client.baseUrl} -->
-                <#assign backUrl = client.baseUrl >
-            <#else>
-                <!-- backurl: backToLoginUrl = ${msg('client.baseUrl')} -->
-                <#assign backUrl = msg('backToLoginUrl') >
-            </#if>
-            <span><a href="${backUrl}" class="backToLogin" id="backToLoginLink">&lt;${msg("backToLogin")}</a></span>
-        </div>  
+        <#if client?? && client.baseUrl?has_content>
+            <!-- backurl: client.baseUrl = ${client.baseUrl} -->
+            <#assign backUrl = client.baseUrl >
+        <#else>
+            <!-- backurl: backToLoginUrl = ${msg('client.baseUrl')} -->
+            <#assign backUrl = msg('backToLoginUrl') >
+        </#if>
+        <a href="${backUrl}" class="backToLogin" id="backToLoginLink">${msg("backToLogin")}</a>
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale">
                 <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
