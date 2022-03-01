@@ -3,6 +3,10 @@
     <#if section = "header">
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
+    <script>
+        document.getElementById('backToLoginLink').style.display = "none";
+    </script>
+
     <#if messagesPerField.existsError('username','password')>
         <div class="qlf-alert-text qlf-alert-text--orange">
             <i class="qlf-alert-text__icon fas fa-exclamation-triangle"></i>

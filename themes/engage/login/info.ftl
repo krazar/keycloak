@@ -1,7 +1,11 @@
 <#import "template.ftl" as layout>
-    <div style="padding-left: 10px; padding-top: 20px;">
-        <span><a href="${msg('backToLoginUrl')}" class="backToLogin">&lt; ${msg("backToLogin")}</a></span>
-    </div>  
+        <#if client?? && client.baseUrl?has_content>
+            <!-- backurl: client.baseUrl = ${client.baseUrl} -->
+            <#assign backUrl = client.baseUrl >
+        <#else>
+            <!-- backurl: backToLoginUrl = ${msg('client.baseUrl')} -->
+            <#assign backUrl = msg('backToLoginUrl') >
+        </#if>
 <@layout.registrationLayout displayMessage=false; section>
    
     <#if section = "header">
@@ -13,10 +17,12 @@
 
     <#elseif section = "form">
 
+
         <#if !requiredActions??>
-        <script>
-            location.replace("${client.baseUrl}");
-        </script>
+            ${kcSanitize(msg('welcomeAllGoodText'))?no_esc}
+            <a type="button" class="pf-c-button pf-m-primary pf-m-block btn-lg" style="margin-top: 30px" href="${backUrl}">
+                <span>${kcSanitize(msg('welcomeAllGoodCtaText'))?no_esc}</span>
+            </a>
         </#if>
 
 
