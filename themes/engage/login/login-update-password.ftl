@@ -3,6 +3,7 @@
     <#if section = "header">
         ${msg("updatePasswordTitle")}
     <#elseif section = "form">
+    
         <#if messagesPerField.existsError('password-confirm')>
             <div class="qlf-alert-text qlf-alert-text--orange">
                 <i class="qlf-alert-text__icon fas fa-exclamation-triangle"></i>
@@ -20,13 +21,15 @@
             </div>
         </#if>
 
-        <form id="kc-passwd-update-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+        <form id="kc-passwd-update-form" action="${url.loginAction}" method="post" style="width: 270px; margin: auto;">
             <input type="text" id="username" name="username" value="${username}" autocomplete="username"
                    readonly="readonly" style="display:none;"/>
             <input type="password" id="password" name="password" autocomplete="current-password" style="display:none;"/>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcInputWrapperClass!}" style="padding-top: 10px">
+                <div class="form-group wrapper__login__form__group">
+                    <span class="wrapper__login__form__group__icon">
+                        <i class="fal fa-lock-alt"></i>
+                    </span>
                     <input type="password" id="password-new" name="password-new" class="${properties.kcInputClass!}"
                            autofocus autocomplete="new-password"
                            aria-invalid="<#if messagesPerField.existsError('password','password-confirm')>true</#if>"
@@ -34,10 +37,11 @@
                     />
 
                 </div>
-            </div>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcInputWrapperClass!}">
+                <div class="form-group wrapper__login__form__group">
+                    <span class="wrapper__login__form__group__icon">
+                        <i class="fal fa-lock-alt"></i>
+                    </span>
                     <input type="password" id="password-confirm" name="password-confirm"
                            class="${properties.kcInputClass!}"
                            autocomplete="new-password"
@@ -45,9 +49,6 @@
                            placeholder="${msg('passwordConfirm')}"
                     />
 
-                    
-
-                </div>
             </div>
 
             <div class="${properties.kcFormGroupClass!}">

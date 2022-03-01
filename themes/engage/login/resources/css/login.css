@@ -120,6 +120,7 @@ body.login {
   padding: 0 20px 0 0;
   height: initial;
   margin: auto;
+  cursor: pointer;
 }
 
 .wrapper__login__form__lang select:hover,
@@ -833,30 +834,82 @@ ol#kc-totp-settings .highlight_content li {
   color: #ffffff;
 }
 
-.kc-welcome-to-qualifio-message {
-  font-weight: bold;
-  padding-bottom: 20px;
-}
 
 .kc-welcome-to-qualifio-message h2 {
-  font-weight: bold;
+  font-weight: 600;
+  font-family: "Raleway", Open sans, sans-serif;
+  font-size: 24px;
 }
 
-.kc-welcome-to-qualifio-message hr {
-  border: 2px solid #fba026;
-  border-radius: 2px;
-  width: 70px;
+.kc-welcome-to-qualifio-message h2:after {
+  content:"";
+  width: 60px;
+  height: 2px;
+  display: block;
+  margin: 10px auto 15px;
+  background: #fba026;
+}
+
+b {
+  font-weight: 600;
+}
+
+.success_alert {
+  border-radius: 5px;
+  border: 2px solid #74c820;
+  background: #e3f4d2;
+  padding: 15px 15px 15px 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.success_alert--icon {
+  position: absolute;
+  background: #74c820;
+  display: flex;
+  width: 30px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.success_alert--icon:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Pro";
+  color: #fff;
   margin: auto;
+  font-size: 16px;
+}
+
+.success_alert--content {
+  color: #666666;
+  text-align: left;
 }
 
 .backToLogin {
   color: #557685;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
+  vertical-align: middle;
+  position: absolute;
+  top: 24px;
+  left: 19px;
+  transition: .3s;
+}
+
+.backToLogin:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.backToLogin:before {
+  content: "\f104";
+  font-family: "Font Awesome 5 Pro";
+  margin: 7px;
 }
 
 .do-actions {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 @media only screen and (max-width: 809px) {
