@@ -1,5 +1,14 @@
 <#outputformat "plainText">
-<#assign requiredActionsText><#if requiredActions??><#list requiredActions><#items as reqActionItem>${msg("requiredAction.${reqActionItem}")}<#sep>, </#sep></#items></#list></#if></#assign>
+<#assign requiredActionsText>
+<#assign invitationMail = false/>
+<#if requiredActions??>
+    <#assign invitationMail = requiredActions?seq_contains("VERIFY_EMAIL")>
+    <#list requiredActions>
+        <#items as reqActionItem>${msg("requiredAction.${reqActionItem}")}<#sep>, </#sep>
+        </#items>
+    </#list>
+    </#if>
+</#assign>
 </#outputformat>
 
 <html>
@@ -17,7 +26,11 @@
             </tr>
             <tr>
                 <td bgcolor="#ffffff" style="padding: 50px; color: #666666; background-color:#ffffff;">
-                    ${kcSanitize(msg("executeActionsBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration)))?no_esc}
+                    <#if invitationMail>
+                        ${kcSanitize(msg("executeInvitationBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration), msg('helpDeskLink')))?no_esc}
+                    <#else>
+                        ${kcSanitize(msg("executeActionsBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration)))?no_esc}
+                    </#if>
                 </td>
             </tr>
         </table>
