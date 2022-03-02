@@ -27,7 +27,6 @@
             <tr>
                 <td bgcolor="#ffffff" style="padding: 50px; color: #666666; background-color:#ffffff;">
                     <#if invitationMail>
-                    ${kcSanitize(msg('helpDeskLink'))}
                         ${kcSanitize(msg("executeInvitationBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration), msg('helpDeskLink')))?no_esc}
                     <#else>
                         ${kcSanitize(msg("executeActionsBodyHtml",link, linkExpiration, realmName, requiredActionsText, linkExpirationFormatter(linkExpiration)))?no_esc}
