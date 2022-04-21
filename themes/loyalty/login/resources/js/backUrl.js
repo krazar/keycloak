@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         backToLogin?.remove();
     }
 
+    var logoData = document.getElementById('logo-data');
+    if (logoData){
+        var logoUri = logoData.dataset?.uri;
+        var logo = document.querySelector('.kc-logo-text');
+        logo.style.backgroundImage = `url(${logoUri})`;
+    }
+
+
 });
 
 
