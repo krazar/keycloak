@@ -27,7 +27,7 @@
     <#if client?? && (client.attributes.logoUri)?has_content>
         <div id="logo-data" data-uri="${client.attributes.logoUri}" />
     </#if>
-    
+
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}?v=${properties.cssVersion}" type="text/javascript"></script>
