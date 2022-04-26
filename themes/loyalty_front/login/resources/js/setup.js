@@ -4,6 +4,9 @@ var backUrl = urlParams.get('redirect_uri');
 
 document.addEventListener("DOMContentLoaded", function(event) {
     var backToLogin = document.getElementById('backToLoginLink');
+    var logo = document.querySelector('.kc-logo-text');
+    var logoData = document.getElementById('logo-data');
+
     if(backUrl){
         backToLogin.href = backUrl;
     }
@@ -11,12 +14,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         backToLogin?.remove();
     }
 
-    var logoData = document.getElementById('logo-data');
     if (logoData){
         var logoUri = logoData.dataset?.uri;
-        var logo = document.querySelector('.kc-logo-text');
         logo.style.backgroundImage = `url(${logoUri})`;
     }
+    else {
+        logo.remove();
+    }
+
+
 
 
 });

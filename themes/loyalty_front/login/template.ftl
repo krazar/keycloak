@@ -11,7 +11,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title>Qualifio Loyalty • Login Page</title>
+    <title> ${realm.displayName} • Login Page</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
@@ -27,7 +27,7 @@
     <#if client?? && (client.attributes.logoUri)?has_content>
         <div id="logo-data" data-uri="${client.attributes.logoUri}" />
     </#if>
-
+    
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}?v=${properties.cssVersion}" type="text/javascript"></script>
@@ -100,11 +100,17 @@
 
         </div>
     </div>
-    <div class="login__footer">
-        ${msg('footerZendesk')?no_esc} • 
-        ${msg('footerPrivate')?no_esc} • 
-        ${msg('footerBlog')?no_esc} 
-    </div>
+    <#if client??>
+        <div class="login__footer">
+            <#if (client.attributes.policyUri)?has_content>
+            <a href="${client.attributes.policyUri}" target="_blank">${msg('footerPrivate')?no_esc}</a> •
+            </#if>
+            <#if (client.attributes.tosUri)?has_content>
+                <a href="${client.attributes.tosUri}" target="_blank">${msg('footerTos')?no_esc}</a>
+            </#if>
+        </div>
+    </#if>
+
    
 </div>
     
