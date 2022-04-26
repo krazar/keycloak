@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var logoData = document.getElementById('logo-data');
 
     if(backUrl){
-        backToLogin.href = backUrl;
+        backToLogin.href = backUrl.split("?")[0];
     }
     else {
         backToLogin?.remove();
