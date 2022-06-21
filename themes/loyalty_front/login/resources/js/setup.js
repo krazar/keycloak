@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         backToLogin?.remove();
     }
 
-    console.log('hellooooo');
-
     if (logoData) {
         var logoUri = logoData.dataset?.uri;
         if(logo) {
@@ -33,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else {
         logo?.remove();
     }
-    
+
 });
 
 

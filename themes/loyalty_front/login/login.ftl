@@ -102,9 +102,6 @@
                             </#if>
                         </a>
                     </#list>
-                    <a id="sso__button" href="https://manager.qualifio.com/app/login-sso.cfm?iso=fr">
-                        <span>${msg("connectWithSso")}</span>
-                    </a>     
                 </div>
             </div>
         </#if>
