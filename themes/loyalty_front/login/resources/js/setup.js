@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         else {
             var customLogo = document.createElement("div");
             customLogo.className="kc-logo-text"
-            customLogo.style.backgroundImage = "url(https://www.svgrepo.com/show/303110/apple-black-logo.svg)"
+            customLogo.style.backgroundImage = `url(${logoUri})`
             var header = document.getElementById("kc-header");
             header.appendChild(customLogo);
         }
