@@ -15,13 +15,14 @@ services:
     build:
       context: .
     ports:
-      - "80:8080"
+      - "3440:8080"
     volumes:
       # this allows to dynamically change the theme in local and directly see the update instead of re-building the image
       - ./themes/qualifio:/opt/bitnami/keycloak/themes/qualifio
       - ./themes/engage:/opt/bitnami/keycloak/themes/engage
       - ./themes/loyalty_back:/opt/bitnami/keycloak/themes/loyalty_back
       - ./themes/loyalty_front:/opt/bitnami/keycloak/themes/loyalty_front
+      - ./themes/loyalty_front_with_form:/opt/bitnami/keycloak/themes/loyalty_front_with_form
 
     environment:
       - KEYCLOAK_CREATE_ADMIN_USER=true
