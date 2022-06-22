@@ -19,11 +19,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var logoUri = logoData.dataset?.uri;
         if(logo) {
             logo.style.backgroundImage = `url(${logoUri})`;
+            logo.style.backgroundSize = "contain";
+            logo.style.backgroundPosition = "center";
         }
         else {
             var customLogo = document.createElement("div");
             customLogo.className="kc-logo-text"
             customLogo.style.backgroundImage = `url(${logoUri})`
+            customLogo.style.backgroundSize = "contain";
+            customLogo.style.backgroundPosition = "center";
             var header = document.getElementById("kc-header");
             header.appendChild(customLogo);
         }
