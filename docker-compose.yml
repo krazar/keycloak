@@ -22,6 +22,7 @@ services:
       - ./themes/engage:/opt/bitnami/keycloak/themes/engage
       - ./themes/loyalty_back:/opt/bitnami/keycloak/themes/loyalty_back
       - ./themes/loyalty_front:/opt/bitnami/keycloak/themes/loyalty_front
+      - ./themes/loyalty_front_with_form:/opt/bitnami/keycloak/themes/loyalty_front_with_form
 
     environment:
       - KEYCLOAK_CREATE_ADMIN_USER=true

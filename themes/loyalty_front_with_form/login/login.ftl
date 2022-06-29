@@ -35,7 +35,7 @@
                             aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                             style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=');"
                             placeholder="${msg('email')}"
-                            
+
                         />
 
                     </#if>
@@ -66,7 +66,7 @@
                             </div>
                         </#if>
                         </div>
-                        
+
 
                   </div>
 
@@ -98,7 +98,7 @@
                                 <img src="${url.resourcesPath}/img/${p.displayName?lower_case}-g-logo.svg">
                                 <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${msg("connectWith")} ${p.displayName}</span>
                             <#else>
-                                <span class="${properties.kcFormSocialAccountNameClass!}">${msg("connectWith")} ${p.displayName}</span>
+                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${msg("connectWith")} ${p.displayName} </span>
                             </#if>
                         </a>
                     </#list>
