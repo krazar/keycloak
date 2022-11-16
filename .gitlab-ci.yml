@@ -1,12 +1,4 @@
----
-
 include:
-  - project: infrastructure/ci-base
-    ref: master
+  - project: infrastructure/ci/images
+    ref: main
     file: main.yaml
-
-variables:
-  DISABLE_DEPLOY: "true"
-  DISABLE_E2E: "true"
-  DISABLE_REVIEW: "true"
-  DISABLE_TEST: "true"
