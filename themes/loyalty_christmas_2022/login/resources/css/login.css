@@ -480,6 +480,13 @@ html.login-pf,
   font-family: myFont11623;
 }
 
+
+.login-qualifio-p a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #da3e71;
+}
+
 .login__subtitle {
   display: block;
   margin-block-start: 1em;
