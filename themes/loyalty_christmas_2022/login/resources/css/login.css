@@ -979,4 +979,21 @@ b {
     right: 0;
   }
 
+  @media screen and (max-width: 500px) {
+    .steps-box {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .program_step {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .login-pf-page {
+      overflow: scroll;
+    }
+
+  }
+
 }
