@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
 @import url("https://fonts.qualifio.com/fontawesome/css/_qualifio.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @font-face{
   font-family : 'apotek-comp';
   src : url('https://files.qualifio.com/library/qualifio_showcases/fonts/11775/_comp.ttf') format('truetype'),url('https://files.qualifio.com/library/qualifio_showcases/fonts/11775/apotek_comp.otf') format('opentype'),url('https://iles.qualifio.com/library/qualifio_showcases/fonts/11775/apotek_comp.woff') format('woff'),url('https://files.qualifio.com/library/qualifio_showcases/fonts/11775/apotek_comp.svg') format('svg'),url('https://files.qualifio.com/library/qualifio_showcases/fonts/11775/apotek_comp.eot?') format('eot')
@@ -454,7 +455,7 @@ html.login-pf,
   border: solid 1px #ffffff;
   background: #000000;
   border-radius: 10px;
-  padding: 10px 30px 0 30px;
+  padding: 18px 30px;
   height: 60%;
 }
 
@@ -466,6 +467,7 @@ html.login-pf,
 .login-qualifio-p {
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
+  margin-top: 18px;
 }
 
 .login-button {

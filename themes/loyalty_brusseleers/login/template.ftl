@@ -16,6 +16,11 @@
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://assets.qualifio.com/qualifio_showcases/css/FD571104-D960-4224-B884-B267FF01A745.min.css">
+    <style type="text/css">
+        body {
+            background-size: cover !important;
+        }
+    </style>
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${url.resourcesCommonPath}/${style}?v=${properties.cssVersion}" rel="stylesheet" />
