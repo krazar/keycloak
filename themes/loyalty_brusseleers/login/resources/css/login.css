@@ -404,6 +404,7 @@ body {
 html.login-pf,
 .login-pf body {
   height: 100%;
+  overflow: auto;
   background-image: none;
   background-color: #12384a;
   color: #ffffff;
@@ -509,6 +510,11 @@ html.login-pf,
 .login__footer {
   margin: auto auto 25px auto;
   padding-top: 25px;
+}
+
+.login-pf-confidentiality-footer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
 span.fa.fa-fw.fa-exclamation-circle {
