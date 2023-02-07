@@ -55,6 +55,11 @@
                 </div>
             </div>
         </div>
+        <div class="login-pf-confidentiality-footer">
+            ${msg('confidentialityWarning1')}
+            <a href="${msg('confidentialityWarningLink')}" target="_blank" style="text-decoration: none"> ${msg('confidentialityWarning2')} </a>
+            ${msg('confidentialityWarning3')}
+        </div>
 
     </#if>
 
