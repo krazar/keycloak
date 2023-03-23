@@ -1,0 +1,109 @@
+
+.generic {
+    display: none !important;
+}
+
+body {
+    background-color: #213665;
+    background-image: url(https://assets.qualifio.com/322/0889879E-1C7F-40AF-85681E91262315C5.png) !important;
+    background-size: cover
+}
+
+.login__title {
+    font-size: 40px !important;
+    color: #FFFFFF;
+    font-family: "Raleway", sans-serif !important;
+    font-weight: Normal;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+}
+
+
+.login-logo {
+    height: unset !important;
+    width: unset !important;
+}
+.login-logo.en {
+    content: url(https://files.qualifio.com/library/qualifio_showcases/images/2023/christmas%202022/banner-lp-en.png);
+}
+.login-logo.fr {
+    content: url(https://files.qualifio.com/library/qualifio_showcases/images/2023/christmas%202022/banner-lp-fr.png);
+}
+.login-logo.es {
+    content: url(https://files.qualifio.com/library/qualifio_showcases/images/2023/christmas%202022/banner-lp-es.png);
+}
+
+
+
+.login__title {
+    font-size: 40px !important;
+    color: #FFFFFF;
+    font-family: apotek-comp, sans-serif !important;
+    font-weight: Normal;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+}
+
+.login__title.en:after {
+    content: 'ARE YOU READY? THEN LET''S GO!';
+}
+
+.login__title.fr:after {
+    content: 'PRÊT·ES ? C''EST PARTI !';
+}
+
+.login__title.es:after {
+    content: '¿LISTO? VAMOS';
+}
+
+
+.login__subtitle.en:after {
+    content: 'First thing first, get connected';
+}
+
+.login__subtitle.fr:after {
+    content: 'Tout d' 'abord, connectez-vous';
+}
+
+.login__subtitle.es:after {
+    content: 'Lo primero es lo primero, ¡conéctate';
+}
+
+
+.login_privacy_footer_part1.en:after {
+    content: 'By registering, you acknowledge that you have read and agree with our';
+}
+
+.login_privacy_footer_part1.fr:after {
+    content: 'En vous identifiant, vous reconnaissez avoir lu et accepté notre';
+}
+
+.login_privacy_footer_part1.es:after {
+    content: 'Al hacer clic en "Iniciar sesión", reconoces que has leído y estás de acuerdo con nuestra';
+}
+
+.login_privacy_footer_link.en:after {
+    content: 'privacy policy.';
+}
+
+.login_privacy_footer_link.fr:after {
+    content: 'politique de vie privée.';
+}
+
+.login_privacy_footer_link.es:after {
+    content: ' política de privacidad.';
+}
+
+.login_privacy_footer_part2.en:after {
+    content: 'In particular, our legitimate interest to contact you about your interest in our products and services.';
+}
+
+.login_privacy_footer_part2.fr:after {
+    content: 'En particulier, notre intérêt légitime à vous contacter au sujet de votre intérêt pour nos produits et services.';
+}
+
+.login_privacy_footer_part2.es:after {
+    content: 'En particular, nuestro interés legítimo de ponernos en contacto contigo sobre tu interés en nuestros productos y servicios.';
+}
+
+
