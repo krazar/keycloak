@@ -6,3 +6,4 @@ COPY ./themes/loyalty_front /opt/bitnami/keycloak/themes/loyalty_front
 COPY ./themes/loyalty_front_with_form /opt/bitnami/keycloak/themes/loyalty_front_with_form
 COPY ./themes/loyalty_christmas_2022 /opt/bitnami/keycloak/themes/loyalty_christmas_2022
 COPY ./themes/loyalty_brusseleers /opt/bitnami/keycloak/themes/loyalty_brusseleers
+COPY ./themes/generic-theme /opt/bitnami/keycloak/themes/generic-theme
