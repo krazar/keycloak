@@ -13,7 +13,7 @@
             <div class="qlf-alert-text qlf-alert-text--orange">
             <i class="qlf-alert-text__icon fas fa-exclamation-triangle"></i>
             <div class="qlf-alert-text__label">
-                <p class="instruction" style="color: #fba026">${message.summary?no_esc}</p>
+                <p class="instruction" style="color: #fba026">${kcSanitize(message.summary)?no_esc}</p>
             </div>
         </div>
 
