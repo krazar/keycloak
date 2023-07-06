@@ -8,7 +8,7 @@
         </script>
 
         <div id="kc-header" class="${properties.kcHeaderClass!}">
-            <img class="login-logo ${locale.currentLanguageTag}" src="https://auth.staging.k8s.qualifio.com/auth/resources/2well/login/loyalty_back/img/logo-qualifio-white.svg" alt="banner" width="100%">
+            <img class="login-logo ${locale.currentLanguageTag}" src="${url.resourcesPath}/img/logo-qualifio-white.svg" alt="banner" width="100%">
         </div>
 
         <div class="login__title generic">
