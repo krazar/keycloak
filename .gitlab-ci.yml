@@ -2,3 +2,6 @@ include:
   - project: infrastructure/ci/images
     ref: main
     file: main.yaml
+
+variables:
+  BUILD_MULTIARCH: "true"
