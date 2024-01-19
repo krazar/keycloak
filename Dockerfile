@@ -1,4 +1,4 @@
-FROM docker.io/bitnami/keycloak:22.0.5-debian-11-r7 as keycloak
+FROM docker.io/bitnami/keycloak:23.0.4-debian-11-r0 as keycloak
 COPY ./themes/qualifio /opt/bitnami/keycloak/themes/qualifio
 COPY ./themes/engage /opt/bitnami/keycloak/themes/engage
 COPY ./themes/loyalty_back /opt/bitnami/keycloak/themes/loyalty_back
