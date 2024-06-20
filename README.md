@@ -2,6 +2,10 @@
 
 Custom built keycloak image based on Bitnami's image.
 
+## DEPRECATED
+
+This repository has been moved to the [containers](https://gitlab.qualif.io/infrastructure/containers) monorepo.
+
 ## How to customize the theme
 
 Take a look at: https://www.keycloak.org/docs/latest/server_development/index.html#_themes to get all informations about how to customize a theme.
